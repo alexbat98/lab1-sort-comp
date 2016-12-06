@@ -1,0 +1,8 @@
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/test_shell_sort.dir
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/test_selection_sort.dir
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/test_insertion_sort.dir
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/test_better_bubble_sort.dir
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/test_bubble_sort.dir
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir
