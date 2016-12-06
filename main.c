@@ -6,289 +6,192 @@
 #include <locale.h>
 #include <memory.h>
 #include <time.h>
+#include "utils.h"
+#include "algorithms.h"
 
-//#define N 30000
-//
-//void bubble_sort(int *a, int length)
-//{
-//    int swapped;
-//    for (int i = 0; i < length-1; i++) {
-//        swapped = 0;
-//        for (int j = 0; j < length-i-1; j++) {
-//            if (a[j] > a[j+1]) {
-//                a[j] ^= a[j+1];
-//                a[j+1] ^= a[j];
-//                a[j] ^= a[j+1];
-//                swapped = 1;
-//            }
-//        }
-//
-//        if(!swapped)
-//            break;
-//    }
-//}
-//
-//void insert_sort(int * a, int length)
-//{
-//    int ne, location;
-//
-//    for (int i = 1; i < length; i++)
-//    {
-//        ne = a[i];
-//        location = i - 1;
-//        while(location >= 0 && a[location] > ne)
-//        {
-//            a[location+1] = a[location];
-//            location = location - 1;
-//        }
-//        a[location+1] = ne;
-//    }
-//}
-//
-//int min(int * a, int length)
-//{
-//    int minPos = 0;
-//    int i;
-//    for (i = 0; i < length; ++i) {
-//        if (a[i] < a[minPos])
-//            minPos = i;
-//    }
-//
-//    return minPos;
-//}
-//
-//void selection_sort(int * a, int length)
-//{
-//    int i;
-//
-//    for (i = 0; i < length; ++i) {
-//        int minPos = i + min(a + i, length - i);
-//        a[i] ^= a[minPos];
-//        a[minPos] ^= a[i];
-//        a[i] ^= a[minPos];
-//    }
-//}
-//
-//int* merge_sort(int *up, int *down, unsigned int left, unsigned int right)
-//{
-//    if (left == right)
-//    {
-//        down[left] = up[left];
-//        return down;
-//    }
-//
-//    unsigned int middle = (unsigned int)((left + right) * 0.5);
-//
-//    // разделяй и сортируй
-//    int *l_buff = merge_sort(up, down, left, middle);
-//    int *r_buff = merge_sort(up, down, middle + 1, right);
-//
-//    // слияние двух отсортированных половин
-//    int *target = l_buff == up ? down : up;
-//
-//    unsigned int width = right - left, l_cur = left, r_cur = middle + 1;
-//    for (unsigned int i = left; i <= right; i++)
-//    {
-//        if (l_cur <= middle && r_cur <= right)
-//        {
-//            if (l_buff[l_cur] < r_buff[r_cur])
-//            {
-//                target[i] = l_buff[l_cur];
-//                l_cur++;
-//            }
-//            else
-//            {
-//                target[i] = r_buff[r_cur];
-//                r_cur++;
-//            }
-//        }
-//        else if (l_cur <= middle)
-//        {
-//            target[i] = l_buff[l_cur];
-//            l_cur++;
-//        }
-//        else
-//        {
-//            target[i] = r_buff[r_cur];
-//            r_cur++;
-//        }
-//    }
-//    return target;
-//}
-//
-//void quick_sort(int * a, int l, int r)
-//{
-//    int x = a[l + (r - l) / 2];
-//    //запись эквивалентна (l+r)/2,
-//    //но не вызввает переполнения на больших данных
-//    int i = l;
-//    int j = r;
-//    //код в while обычно выносят в процедуру particle
-//    while(i <= j)
-//    {
-//        while(a[i] < x) i++;
-//        while(a[j] > x) j--;
-//        if(i <= j)
-//        {
-//            a[i] ^= a[j];
-//            a[j] ^= a[i];
-//            a[i] ^= a[j];
-//            i++;
-//            j--;
-//        }
-//    }
-//    if (i<r)
-//        quick_sort(a, i, r);
-//
-//    if (l<j)
-//        quick_sort(a, l, j);
-//}
+#define N 1000000
 
 int main()
 {
     setlocale(LC_ALL, "");
 
-    printf("Сравнение алгоритмов сортировки\n");
+    printf("Сравнение алгоритмов сортировки\n\n");
 
-//    srand(31321);
-//
-//    int *randNumbers = (int *) calloc(N, sizeof(int));
-//    int *worstScenario = (int *) calloc(N, sizeof(int));
-//
-//    int i;
-//
-//    for (i = 0; i < N; ++i) {
-//        randNumbers[i] = rand();
-//        worstScenario[i] = N - i;
-//    }
-//
-//    int *sortableSet = (int *) calloc(N, sizeof(int));
-//
-//    // Тест Пузырьковой сортировки
-//    // 1) Случайные числа
-//    memcpy(sortableSet, randNumbers, N * sizeof(int));
-//
-//    clock_t startTime = clock();
-//    bubble_sort(sortableSet, N);
-//    clock_t endTime = clock();
-//
-//    float result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    // 2) Случайные числа
-//    printf("%f\n", result);
-//
-//    memcpy(sortableSet, worstScenario, N * sizeof(int));
-//
-//    startTime = clock();
-//    bubble_sort(sortableSet, N);
-//    endTime = clock();
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//    // Конец теста Пузырьковой сортировки
-//
-//    //Тест Сортировки вставками
-//    memcpy(sortableSet, randNumbers, N * sizeof(int));
-//
-//    startTime = clock();
-//    insert_sort(sortableSet, N);
-//    endTime = clock();
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//
-//    memcpy(sortableSet, worstScenario, N * sizeof(int));
-//
-//    startTime = clock();
-//    insert_sort(sortableSet, N);
-//    endTime = clock();
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//    // Конец теста Сортировки вставками
-//
-//
-//
-//
-//
-//    // Тест Сортировки выбором
-//    memcpy(sortableSet, randNumbers, N * sizeof(int));
-//
-//    startTime = clock();
-//    selection_sort(sortableSet, N);
-//    endTime = clock();
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//
-//
-//    memcpy(sortableSet, worstScenario, N * sizeof(int));
-//
-//    startTime = clock();
-//    selection_sort(sortableSet, N);
-//    endTime = clock();
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//    // Конец теста Сортировки выбором
-//
-//
-//
-//
-//
-//    // Тест Сортировки слиянием
-//
-//    memcpy(sortableSet, randNumbers, N * sizeof(int));
-//    startTime = clock();
-//    int *mem = (int *) calloc(N, sizeof(int));
-//    merge_sort(sortableSet, mem, 0, N);
-//    endTime = clock();
-//    free(mem);
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//
-//    memcpy(sortableSet, worstScenario, N * sizeof(int));
-//    startTime = clock();
-//    mem = (int *) calloc(N, sizeof(int));
-//    merge_sort(sortableSet, mem, 0, N);
-//    endTime = clock();
-//    free(mem);
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//    // Конец теста сортировки слиянием
-//
-//
-//
-//
-//
-//    // Тест Быстрой сортировки
-//    memcpy(sortableSet, randNumbers, N * sizeof(int));
-//    startTime = clock();
-//    quick_sort(sortableSet, 0, N);
-//    endTime = clock();
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//
-//    memcpy(sortableSet, worstScenario, N * sizeof(int));
-//    startTime = clock();
-//    quick_sort(sortableSet, 0, N);
-//    endTime = clock();
-//
-//    result = (float)(endTime - startTime) / CLOCKS_PER_SEC;
-//
-//    printf("%f\n", result);
-//    //Конец теста быстрой сортировки
+    FILE *fp = fopen("array.dat", "r");
+    int i;
+    int * original_arr = (int *) calloc(N, sizeof(int));
+
+    for (i = 0; i < N; ++i)
+    {
+        fscanf(fp, "%d", &original_arr[i]);
+    }
+
+    fclose(fp);
+
+    int * working_arr = (int *) calloc(N, sizeof(int));
+
+    clock_t start, end;
+    float res;
+    char check_flag;
+
+    printf("%-64s%-15s%-20s\n", "Название алгоритма", "Время", "Корректность");
+
+    // Тестирование классического пузырька
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+
+    start = clock();
+    bubble_sort(working_arr, N);
+    end = clock();
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%-15.3f%-20c\n", "Классический пузырек", res, check_flag);
+
+    // Конец тестирования классического пузырька
+
+    // Тестирование улучшенного пузырька
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+
+    start = clock();
+    better_bubble_sort(working_arr, N);
+    end = clock();
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%-15.3f%-20c\n", "Улучшенный пузырек", res, check_flag);
+
+    // Конец тестирования улучшенного пузырька
+
+    // Тестирование сортировки Шелла
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+
+    start = clock();
+    shell_sort(working_arr, N);
+    end = clock();
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%-15.3f%-20c\n", "Сортировка Шелла", res, check_flag);
+
+    // Конец тестирования Сортировки Шелла
+
+    // Тестирование сортировки выбором
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+
+    start = clock();
+    //selection_sort(working_arr, N);
+    end = clock();
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%-15.3f%-20c\n", "Сортировка выбором", res, check_flag);
+
+    // Конец тестирования Сортировки выбором
+
+    // Тестирование сортировки вставками
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+
+    start = clock();
+    insertion_sort(working_arr, N);
+    end = clock();
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%-15.3f%-20c\n", "Сортировка вставками", res, check_flag);
+
+    // Конец тестирования Сортировки вставками
+
+    // Тестирование сортировки слиянием
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+    int *scratch = (int *) calloc(N, sizeof(int));
+
+    start = clock();
+    merge_sort(working_arr, scratch, 0, N - 1);
+    end = clock();
+
+    free(scratch);
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%-15.3f%-20c\n", "Сортировка слиянием", res, check_flag);
+
+    // Конец тестирования Сортировки слиянием
+
+    // Тестирование быстрой сортировки
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+
+    start = clock();
+    quick_sort(working_arr, 0, N - 1);
+    end = clock();
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%-15.3f%-20c\n", "Быстрая сортировка", res, check_flag);
+
+    // Конец тестирования быстрой сортировки
 
     return 0;
 }
