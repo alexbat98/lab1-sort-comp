@@ -131,6 +131,27 @@ int min(int *arr, int n)
 }
 
 /**
+ * Поиск максимального элемента в массиве
+ * @param arr Массив
+ * @param n Количество элементов
+ * @return Индекс минимального
+ */
+int max(int *arr, int n)
+{
+    int i, max_idx = 0;
+
+    for (i = 0; i < n; ++i)
+    {
+        if (arr[i] > arr[max_idx])
+        {
+            max_idx = i;
+        }
+    }
+
+    return max_idx;
+}
+
+/**
  * Сортировка выбором
  * @param arr Массив данных
  * @param n Количество элементов
@@ -238,6 +259,11 @@ void merge_sort(int *arr, int *scratch, int start, int end)
 
 /**
  * Быстрая сортировка
+ * В данном случае используется деление не на 2, а на 3 части
+ * Подробности:
+ * http://www.geeksforgeeks.org/3-way-quicksort/
+ * https://www.toptal.com/developers/sorting-algorithms/quick-sort-3-way
+ * https://ru.wikipedia.org/wiki/Быстрая_сортировка
  * @param arr Массив данных
  * @param start Начало
  * @param end Конец
@@ -261,58 +287,56 @@ void quick_sort(int *arr, int start, int end, int counter)
         return;
     }
 
+    int tmp;
+
+    if (end - start <= 1)
+    {
+        if (arr[start] > arr[end])
+        {
+            tmp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = tmp;
+        }
+        return;
+
+    }
+
     // Выбор опорного элемента случайным образом
     srand((unsigned int) time(0));
-    int divider = arr[rand() % end + 1];
+    int pos;
 
-    int lo = start;
-    int hi = end;
-    int flag = 0;
-
-    while (1)
+    do
     {
-        while (arr[hi] >= divider)
+        pos = start + rand() % end;
+    } while (pos < start && pos > end);
+
+    int divider = arr[pos];
+
+    int lo = start, mid = start;
+    int hi = end;
+
+    while (mid <= hi)
+    {
+        if (arr[mid] < divider)
         {
-            hi--;
-            if (hi <= lo)
-            {
-                break;
-            }
-        }
-
-        if (hi <= lo)
-        {
-            arr[lo] = divider;
-            break;
-        }
-
-        arr[lo] = arr[hi];
-
-        lo++;
-
-        while (arr[lo] < divider)
-        {
+            tmp = arr[lo];
+            arr[lo] = arr[mid];
+            arr[mid] = tmp;
+            mid++;
             lo++;
-            if (lo >= hi)
-            {
-                flag = 1;
-                break;
-            }
-        }
-
-        if (flag) break;
-
-        if (lo >= hi)
+        } else if (arr[mid] == divider)
         {
-            lo = hi;
-            arr[hi] = divider;
-            flag = 1;
+            mid++;
+        } else if (arr[mid] > divider)
+        {
+            tmp = arr[hi];
+            arr[hi--] = arr[mid];
+            arr[mid] = tmp;
         }
-        if (flag) break;
 
-        arr[hi] = arr[lo];
     }
 
     quick_sort(arr, start, lo - 1, ++counter);
-    quick_sort(arr, lo + 1, end, counter);
+    quick_sort(arr, mid, end, counter);
+
 }
