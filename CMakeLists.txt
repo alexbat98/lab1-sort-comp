@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 project(lab1_sort_comp)
 
-#set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_STANDARD 11
 
 set(SOURCE_FILES main.c algorithms.c algorithms.h utils.c utils.h)
 add_executable(lab1_sort_comp ${SOURCE_FILES})

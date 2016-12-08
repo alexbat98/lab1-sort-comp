@@ -3,7 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test_insertion_sort.dir/tests/test_insertion_sort.c.o"
   "CMakeFiles/test_insertion_sort.dir/utils.c.o"
   "test_insertion_sort.pdb"
-  "test_insertion_sort"
+  "test_insertion_sort.exe"
+  "libtest_insertion_sort.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

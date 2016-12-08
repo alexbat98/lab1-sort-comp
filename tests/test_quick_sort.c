@@ -15,7 +15,7 @@ int main()
 
     int *arr = CONSTANT_ARRAY; // для удобсва
 
-    quick_sort(arr, 0, N - 1s);
+    quick_sort(arr, 0, N - 1, 0);
 
     int i;
 

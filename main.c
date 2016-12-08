@@ -9,7 +9,7 @@
 #include "utils.h"
 #include "algorithms.h"
 
-#define N 1000000
+#define N 300000
 
 int main()
 {
@@ -34,7 +34,7 @@ int main()
     float res;
     char check_flag;
 
-    printf("%-64s%-15s%-20s\n", "Название алгоритма", "Время", "Корректность");
+    printf("%-64s%18s%38s\n", "Название алгоритма", "Время", "Корректность");
 
     // Тестирование классического пузырька
 
@@ -54,7 +54,7 @@ int main()
 
     res = (float)(end - start) / CLOCKS_PER_SEC;
 
-    printf("%-64s%-15.3f%-20c\n", "Классический пузырек", res, check_flag);
+    printf("%-64s%15.3f%20c\n", "Классический пузырек", res, check_flag);
 
     // Конец тестирования классического пузырька
 
@@ -76,7 +76,7 @@ int main()
 
     res = (float)(end - start) / CLOCKS_PER_SEC;
 
-    printf("%-64s%-15.3f%-20c\n", "Улучшенный пузырек", res, check_flag);
+    printf("%-64s%13.3f%20c\n", "Улучшенный пузырек", res, check_flag);
 
     // Конец тестирования улучшенного пузырька
 
@@ -98,31 +98,9 @@ int main()
 
     res = (float)(end - start) / CLOCKS_PER_SEC;
 
-    printf("%-64s%-15.3f%-20c\n", "Сортировка Шелла", res, check_flag);
+    printf("%-64s%11.3f%20c\n", "Сортировка Шелла", res, check_flag);
 
     // Конец тестирования Сортировки Шелла
-
-    // Тестирование сортировки выбором
-
-    memcpy(working_arr, original_arr, N * sizeof(int));
-
-    start = clock();
-    //selection_sort(working_arr, N);
-    end = clock();
-
-    if (check_sort_order(working_arr, N))
-    {
-        check_flag = '-';
-    } else
-    {
-        check_flag = '+';
-    }
-
-    res = (float)(end - start) / CLOCKS_PER_SEC;
-
-    printf("%-64s%-15.3f%-20c\n", "Сортировка выбором", res, check_flag);
-
-    // Конец тестирования Сортировки выбором
 
     // Тестирование сортировки вставками
 
@@ -142,7 +120,7 @@ int main()
 
     res = (float)(end - start) / CLOCKS_PER_SEC;
 
-    printf("%-64s%-15.3f%-20c\n", "Сортировка вставками", res, check_flag);
+    printf("%-64s%15.3f%20c\n", "Сортировка вставками", res, check_flag);
 
     // Конец тестирования Сортировки вставками
 
@@ -167,7 +145,7 @@ int main()
 
     res = (float)(end - start) / CLOCKS_PER_SEC;
 
-    printf("%-64s%-15.3f%-20c\n", "Сортировка слиянием", res, check_flag);
+    printf("%-64s%14.3f%20c\n", "Сортировка слиянием", res, check_flag);
 
     // Конец тестирования Сортировки слиянием
 
@@ -176,7 +154,7 @@ int main()
     memcpy(working_arr, original_arr, N * sizeof(int));
 
     start = clock();
-    quick_sort(working_arr, 0, N - 1);
+    quick_sort(working_arr, 0, N - 1, 0);
     end = clock();
 
     if (check_sort_order(working_arr, N))
@@ -189,9 +167,31 @@ int main()
 
     res = (float)(end - start) / CLOCKS_PER_SEC;
 
-    printf("%-64s%-15.3f%-20c\n", "Быстрая сортировка", res, check_flag);
+    printf("%-64s%13.3f%20c\n", "Быстрая сортировка", res, check_flag);
 
     // Конец тестирования быстрой сортировки
+
+    // Тестирование сортировки выбором
+
+    memcpy(working_arr, original_arr, N * sizeof(int));
+
+    start = clock();
+    selection_sort(working_arr, N);
+    end = clock();
+
+    if (check_sort_order(working_arr, N))
+    {
+        check_flag = '-';
+    } else
+    {
+        check_flag = '+';
+    }
+
+    res = (float)(end - start) / CLOCKS_PER_SEC;
+
+    printf("%-64s%13.3f%20c\n", "Сортировка выбором", res, check_flag);
+
+    // Конец тестирования Сортировки выбором
 
     return 0;
 }

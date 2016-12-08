@@ -11,6 +11,6 @@ void shell_sort(int *arr, int n);
 void selection_sort(int *arr, int n);
 void insertion_sort(int *arr, int n);
 void merge_sort(int *arr, int *scratch, int start, int end);
-void quick_sort(int *arr, int start, int end);
+void quick_sort(int *arr, int start, int end, int counter);
 
 #endif //LAB1_SOT_COMP_ALGORITHMS_H

@@ -2,6 +2,9 @@
 // Created by Александр Баташев on 02.12.16.
 //
 
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
 #include "algorithms.h"
 
 /**
@@ -128,43 +131,31 @@ int min(int *arr, int n)
 }
 
 /**
- * Поиск минимального элемента в массиве
- * @param arr Массив
- * @param n Количество элементов
- * @return Индекс минимального
- */
-int max(int *arr, int n)
-{
-    int i, max_idx = 0;
-
-    for (i = 0; i < n; ++i)
-    {
-        if (arr[i] > arr[max_idx])
-        {
-            max_idx = i;
-        }
-    }
-
-    return max_idx;
-}
-
-/**
  * Сортировка выбором
  * @param arr Массив данных
  * @param n Количество элементов
  */
 void selection_sort(int *arr, int n)
 {
-    int i, min_idx;
+    int i, j, pos;
 
     for (i = 0; i < n - 1; ++i)
     {
-        // C-style конструкция, прибавляем i к адресу первого элемента массива a
-        // чтобы получить новый массив размера n - i
-        min_idx = i + min(arr + i, n - i);
-        arr[i] ^= arr[min_idx];
-        arr[min_idx] ^= arr[i];
-        arr[i] ^= arr[min_idx];
+        pos = i;
+        for (j = i + 1; j < n; ++j)
+        {
+            if (arr[pos] > arr[j])
+            {
+                pos = j;
+            }
+        }
+
+        if (pos != i)
+        {
+            arr[i] ^= arr[pos];
+            arr[pos] ^= arr[i];
+            arr[i] ^= arr[pos];
+        }
     }
 }
 
@@ -250,20 +241,29 @@ void merge_sort(int *arr, int *scratch, int start, int end)
  * @param arr Массив данных
  * @param start Начало
  * @param end Конец
+ * @param counter Счетчик вложенности рекурсии. При первом вызове всегда равен 0.
  */
-void quick_sort(int *arr, int start, int end)
+void quick_sort(int *arr, int start, int end, int counter)
 {
+
+    /*
+     * Специальная оптимизация, предотвращающая переполнение стека
+     * и увеличивающая скорость работы алгоритма
+     */
+    if (counter >= 100)
+    {
+        insertion_sort(arr, end + 1);
+        return;
+    }
+
     if (start >= end)
     {
         return;
     }
 
-
-    // выбор опорного элемента
-    int max_idx = max(arr + start, end + 1);
-    int min_idx = min(arr + start, end + 1);
-
-    int divider = arr[(max_idx + min_idx) / 2];
+    // Выбор опорного элемента случайным образом
+    srand((unsigned int) time(0));
+    int divider = arr[rand() % end + 1];
 
     int lo = start;
     int hi = end;
@@ -313,6 +313,6 @@ void quick_sort(int *arr, int start, int end)
         arr[hi] = arr[lo];
     }
 
-    quick_sort(arr, start, lo - 1);
-    quick_sort(arr, lo + 1, end);
+    quick_sort(arr, start, lo - 1, ++counter);
+    quick_sort(arr, lo + 1, end, counter);
 }

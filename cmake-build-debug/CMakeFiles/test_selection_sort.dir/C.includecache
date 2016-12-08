@@ -6,25 +6,31 @@
 
 #IncludeRegexTransform: 
 
-/Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c
-tkDecls.h
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c
+stdlib.h
 -
-algorithms.h
-/Users/sasha/ClionProjects/lab1-sort-comp/algorithms.h
-
-/Users/sasha/ClionProjects/lab1-sort-comp/algorithms.h
-
-/Users/sasha/ClionProjects/lab1-sort-comp/tests/test_selection_sort.c
-../algorithms.h
-/Users/sasha/ClionProjects/lab1-sort-comp/algorithms.h
-../utils.h
-/Users/sasha/ClionProjects/lab1-sort-comp/utils.h
+time.h
+-
 stdio.h
 -
+algorithms.h
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.h
 
-/Users/sasha/ClionProjects/lab1-sort-comp/utils.c
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.h
+
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/tests/test_selection_sort.c
+../algorithms.h
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.h
+../utils.h
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.h
+stdio.h
+-
+stdlib.h
+-
+
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c
 utils.h
-/Users/sasha/ClionProjects/lab1-sort-comp/utils.h
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.h
 
-/Users/sasha/ClionProjects/lab1-sort-comp/utils.h
+/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.h
 

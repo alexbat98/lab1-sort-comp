@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/sasha/ClionProjects/lab1-sort-comp
+CMAKE_SOURCE_DIR = /cygdrive/d/alexb/ClionProjects/lab1-sort-comp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named lab1_sort_comp
+
+# Build rule for target.
+lab1_sort_comp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lab1_sort_comp
+.PHONY : lab1_sort_comp
+
+# fast build rule for target.
+lab1_sort_comp/fast:
+	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/build
+.PHONY : lab1_sort_comp/fast
+
+#=============================================================================
 # Target rules for targets named test_shell_sort
 
 # Build rule for target.
@@ -122,32 +135,6 @@ test_shell_sort: cmake_check_build_system
 test_shell_sort/fast:
 	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/build
 .PHONY : test_shell_sort/fast
-
-#=============================================================================
-# Target rules for targets named test_selection_sort
-
-# Build rule for target.
-test_selection_sort: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_selection_sort
-.PHONY : test_selection_sort
-
-# fast build rule for target.
-test_selection_sort/fast:
-	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/build
-.PHONY : test_selection_sort/fast
-
-#=============================================================================
-# Target rules for targets named test_insertion_sort
-
-# Build rule for target.
-test_insertion_sort: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_insertion_sort
-.PHONY : test_insertion_sort
-
-# fast build rule for target.
-test_insertion_sort/fast:
-	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/build
-.PHONY : test_insertion_sort/fast
 
 #=============================================================================
 # Target rules for targets named test_better_bubble_sort
@@ -163,6 +150,45 @@ test_better_bubble_sort/fast:
 .PHONY : test_better_bubble_sort/fast
 
 #=============================================================================
+# Target rules for targets named test_quick_sort
+
+# Build rule for target.
+test_quick_sort: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_quick_sort
+.PHONY : test_quick_sort
+
+# fast build rule for target.
+test_quick_sort/fast:
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/build
+.PHONY : test_quick_sort/fast
+
+#=============================================================================
+# Target rules for targets named test_merge_sort
+
+# Build rule for target.
+test_merge_sort: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_merge_sort
+.PHONY : test_merge_sort
+
+# fast build rule for target.
+test_merge_sort/fast:
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/build
+.PHONY : test_merge_sort/fast
+
+#=============================================================================
+# Target rules for targets named test_selection_sort
+
+# Build rule for target.
+test_selection_sort: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_selection_sort
+.PHONY : test_selection_sort
+
+# fast build rule for target.
+test_selection_sort/fast:
+	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/build
+.PHONY : test_selection_sort/fast
+
+#=============================================================================
 # Target rules for targets named test_bubble_sort
 
 # Build rule for target.
@@ -176,17 +202,30 @@ test_bubble_sort/fast:
 .PHONY : test_bubble_sort/fast
 
 #=============================================================================
-# Target rules for targets named lab1_sort_comp
+# Target rules for targets named test_insertion_sort
 
 # Build rule for target.
-lab1_sort_comp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 lab1_sort_comp
-.PHONY : lab1_sort_comp
+test_insertion_sort: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_insertion_sort
+.PHONY : test_insertion_sort
 
 # fast build rule for target.
-lab1_sort_comp/fast:
-	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/build
-.PHONY : lab1_sort_comp/fast
+test_insertion_sort/fast:
+	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/build
+.PHONY : test_insertion_sort/fast
+
+#=============================================================================
+# Target rules for targets named generate_array
+
+# Build rule for target.
+generate_array: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generate_array
+.PHONY : generate_array
+
+# fast build rule for target.
+generate_array/fast:
+	$(MAKE) -f CMakeFiles/generate_array.dir/build.make CMakeFiles/generate_array.dir/build
+.PHONY : generate_array/fast
 
 algorithms.o: algorithms.c.o
 
@@ -194,12 +233,14 @@ algorithms.o: algorithms.c.o
 
 # target to build an object file
 algorithms.c.o:
-	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/algorithms.c.o
-	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/algorithms.c.o
-	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/algorithms.c.o
-	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/algorithms.c.o
-	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/algorithms.c.o
 	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/algorithms.c.o
+	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/algorithms.c.o
+	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/algorithms.c.o
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/algorithms.c.o
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/algorithms.c.o
+	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/algorithms.c.o
+	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/algorithms.c.o
+	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/algorithms.c.o
 .PHONY : algorithms.c.o
 
 algorithms.i: algorithms.c.i
@@ -208,12 +249,14 @@ algorithms.i: algorithms.c.i
 
 # target to preprocess a source file
 algorithms.c.i:
-	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/algorithms.c.i
-	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/algorithms.c.i
-	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/algorithms.c.i
-	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/algorithms.c.i
-	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/algorithms.c.i
 	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/algorithms.c.i
+	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/algorithms.c.i
+	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/algorithms.c.i
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/algorithms.c.i
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/algorithms.c.i
+	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/algorithms.c.i
+	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/algorithms.c.i
+	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/algorithms.c.i
 .PHONY : algorithms.c.i
 
 algorithms.s: algorithms.c.s
@@ -222,13 +265,42 @@ algorithms.s: algorithms.c.s
 
 # target to generate assembly for a file
 algorithms.c.s:
-	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/algorithms.c.s
-	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/algorithms.c.s
-	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/algorithms.c.s
-	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/algorithms.c.s
-	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/algorithms.c.s
 	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/algorithms.c.s
+	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/algorithms.c.s
+	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/algorithms.c.s
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/algorithms.c.s
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/algorithms.c.s
+	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/algorithms.c.s
+	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/algorithms.c.s
+	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/algorithms.c.s
 .PHONY : algorithms.c.s
+
+generate_array.o: generate_array.c.o
+
+.PHONY : generate_array.o
+
+# target to build an object file
+generate_array.c.o:
+	$(MAKE) -f CMakeFiles/generate_array.dir/build.make CMakeFiles/generate_array.dir/generate_array.c.o
+.PHONY : generate_array.c.o
+
+generate_array.i: generate_array.c.i
+
+.PHONY : generate_array.i
+
+# target to preprocess a source file
+generate_array.c.i:
+	$(MAKE) -f CMakeFiles/generate_array.dir/build.make CMakeFiles/generate_array.dir/generate_array.c.i
+.PHONY : generate_array.c.i
+
+generate_array.s: generate_array.c.s
+
+.PHONY : generate_array.s
+
+# target to generate assembly for a file
+generate_array.c.s:
+	$(MAKE) -f CMakeFiles/generate_array.dir/build.make CMakeFiles/generate_array.dir/generate_array.c.s
+.PHONY : generate_array.c.s
 
 main.o: main.c.o
 
@@ -338,6 +410,60 @@ tests/test_insertion_sort.c.s:
 	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/tests/test_insertion_sort.c.s
 .PHONY : tests/test_insertion_sort.c.s
 
+tests/test_merge_sort.o: tests/test_merge_sort.c.o
+
+.PHONY : tests/test_merge_sort.o
+
+# target to build an object file
+tests/test_merge_sort.c.o:
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/tests/test_merge_sort.c.o
+.PHONY : tests/test_merge_sort.c.o
+
+tests/test_merge_sort.i: tests/test_merge_sort.c.i
+
+.PHONY : tests/test_merge_sort.i
+
+# target to preprocess a source file
+tests/test_merge_sort.c.i:
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/tests/test_merge_sort.c.i
+.PHONY : tests/test_merge_sort.c.i
+
+tests/test_merge_sort.s: tests/test_merge_sort.c.s
+
+.PHONY : tests/test_merge_sort.s
+
+# target to generate assembly for a file
+tests/test_merge_sort.c.s:
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/tests/test_merge_sort.c.s
+.PHONY : tests/test_merge_sort.c.s
+
+tests/test_quick_sort.o: tests/test_quick_sort.c.o
+
+.PHONY : tests/test_quick_sort.o
+
+# target to build an object file
+tests/test_quick_sort.c.o:
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/tests/test_quick_sort.c.o
+.PHONY : tests/test_quick_sort.c.o
+
+tests/test_quick_sort.i: tests/test_quick_sort.c.i
+
+.PHONY : tests/test_quick_sort.i
+
+# target to preprocess a source file
+tests/test_quick_sort.c.i:
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/tests/test_quick_sort.c.i
+.PHONY : tests/test_quick_sort.c.i
+
+tests/test_quick_sort.s: tests/test_quick_sort.c.s
+
+.PHONY : tests/test_quick_sort.s
+
+# target to generate assembly for a file
+tests/test_quick_sort.c.s:
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/tests/test_quick_sort.c.s
+.PHONY : tests/test_quick_sort.c.s
+
 tests/test_selection_sort.o: tests/test_selection_sort.c.o
 
 .PHONY : tests/test_selection_sort.o
@@ -398,12 +524,14 @@ utils.o: utils.c.o
 
 # target to build an object file
 utils.c.o:
-	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/utils.c.o
-	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/utils.c.o
-	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/utils.c.o
-	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/utils.c.o
-	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/utils.c.o
 	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/utils.c.o
+	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/utils.c.o
+	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/utils.c.o
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/utils.c.o
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/utils.c.o
+	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/utils.c.o
+	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/utils.c.o
+	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/utils.c.o
 .PHONY : utils.c.o
 
 utils.i: utils.c.i
@@ -412,12 +540,14 @@ utils.i: utils.c.i
 
 # target to preprocess a source file
 utils.c.i:
-	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/utils.c.i
-	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/utils.c.i
-	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/utils.c.i
-	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/utils.c.i
-	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/utils.c.i
 	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/utils.c.i
+	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/utils.c.i
+	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/utils.c.i
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/utils.c.i
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/utils.c.i
+	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/utils.c.i
+	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/utils.c.i
+	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/utils.c.i
 .PHONY : utils.c.i
 
 utils.s: utils.c.s
@@ -426,12 +556,14 @@ utils.s: utils.c.s
 
 # target to generate assembly for a file
 utils.c.s:
-	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/utils.c.s
-	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/utils.c.s
-	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/utils.c.s
-	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/utils.c.s
-	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/utils.c.s
 	$(MAKE) -f CMakeFiles/lab1_sort_comp.dir/build.make CMakeFiles/lab1_sort_comp.dir/utils.c.s
+	$(MAKE) -f CMakeFiles/test_shell_sort.dir/build.make CMakeFiles/test_shell_sort.dir/utils.c.s
+	$(MAKE) -f CMakeFiles/test_better_bubble_sort.dir/build.make CMakeFiles/test_better_bubble_sort.dir/utils.c.s
+	$(MAKE) -f CMakeFiles/test_quick_sort.dir/build.make CMakeFiles/test_quick_sort.dir/utils.c.s
+	$(MAKE) -f CMakeFiles/test_merge_sort.dir/build.make CMakeFiles/test_merge_sort.dir/utils.c.s
+	$(MAKE) -f CMakeFiles/test_selection_sort.dir/build.make CMakeFiles/test_selection_sort.dir/utils.c.s
+	$(MAKE) -f CMakeFiles/test_bubble_sort.dir/build.make CMakeFiles/test_bubble_sort.dir/utils.c.s
+	$(MAKE) -f CMakeFiles/test_insertion_sort.dir/build.make CMakeFiles/test_insertion_sort.dir/utils.c.s
 .PHONY : utils.c.s
 
 # Help Target
@@ -440,17 +572,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... test_shell_sort"
-	@echo "... test_selection_sort"
 	@echo "... edit_cache"
-	@echo "... test_insertion_sort"
+	@echo "... lab1_sort_comp"
+	@echo "... test_shell_sort"
 	@echo "... test_better_bubble_sort"
+	@echo "... test_quick_sort"
+	@echo "... test_merge_sort"
+	@echo "... test_selection_sort"
 	@echo "... test_bubble_sort"
 	@echo "... rebuild_cache"
-	@echo "... lab1_sort_comp"
+	@echo "... test_insertion_sort"
+	@echo "... generate_array"
 	@echo "... algorithms.o"
 	@echo "... algorithms.i"
 	@echo "... algorithms.s"
+	@echo "... generate_array.o"
+	@echo "... generate_array.i"
+	@echo "... generate_array.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -463,6 +601,12 @@ help:
 	@echo "... tests/test_insertion_sort.o"
 	@echo "... tests/test_insertion_sort.i"
 	@echo "... tests/test_insertion_sort.s"
+	@echo "... tests/test_merge_sort.o"
+	@echo "... tests/test_merge_sort.i"
+	@echo "... tests/test_merge_sort.s"
+	@echo "... tests/test_quick_sort.o"
+	@echo "... tests/test_quick_sort.i"
+	@echo "... tests/test_quick_sort.s"
 	@echo "... tests/test_selection_sort.o"
 	@echo "... tests/test_selection_sort.i"
 	@echo "... tests/test_selection_sort.s"

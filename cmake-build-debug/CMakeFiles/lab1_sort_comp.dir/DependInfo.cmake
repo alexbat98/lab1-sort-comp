@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c" "/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/algorithms.c.o"
-  "/Users/sasha/ClionProjects/lab1-sort-comp/main.c" "/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/main.c.o"
-  "/Users/sasha/ClionProjects/lab1-sort-comp/utils.c" "/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/utils.c.o"
+  "/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c" "/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/algorithms.c.o"
+  "/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/main.c" "/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/main.c.o"
+  "/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c" "/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/utils.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
