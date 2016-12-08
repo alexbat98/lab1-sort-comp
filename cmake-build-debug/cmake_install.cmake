@@ -1,4 +1,4 @@
-# Install script for directory: /cygdrive/d/alexb/ClionProjects/lab1-sort-comp
+# Install script for directory: /Users/sasha/ClionProjects/lab1-sort-comp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

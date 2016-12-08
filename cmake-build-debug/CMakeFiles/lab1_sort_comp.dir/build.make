@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/d/alexb/ClionProjects/lab1-sort-comp
+CMAKE_SOURCE_DIR = /Users/sasha/ClionProjects/lab1-sort-comp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lab1_sort_comp.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/lab1_sort_comp.dir/flags.make
 
 CMakeFiles/lab1_sort_comp.dir/main.c.o: CMakeFiles/lab1_sort_comp.dir/flags.make
 CMakeFiles/lab1_sort_comp.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab1_sort_comp.dir/main.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab1_sort_comp.dir/main.c.o   -c /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lab1_sort_comp.dir/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab1_sort_comp.dir/main.c.o   -c /Users/sasha/ClionProjects/lab1-sort-comp/main.c
 
 CMakeFiles/lab1_sort_comp.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab1_sort_comp.dir/main.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/main.c > CMakeFiles/lab1_sort_comp.dir/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sasha/ClionProjects/lab1-sort-comp/main.c > CMakeFiles/lab1_sort_comp.dir/main.c.i
 
 CMakeFiles/lab1_sort_comp.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab1_sort_comp.dir/main.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/main.c -o CMakeFiles/lab1_sort_comp.dir/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sasha/ClionProjects/lab1-sort-comp/main.c -o CMakeFiles/lab1_sort_comp.dir/main.c.s
 
 CMakeFiles/lab1_sort_comp.dir/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/lab1_sort_comp.dir/main.c.o.provides.build: CMakeFiles/lab1_sort_comp
 
 CMakeFiles/lab1_sort_comp.dir/algorithms.c.o: CMakeFiles/lab1_sort_comp.dir/flags.make
 CMakeFiles/lab1_sort_comp.dir/algorithms.c.o: ../algorithms.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab1_sort_comp.dir/algorithms.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab1_sort_comp.dir/algorithms.c.o   -c /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lab1_sort_comp.dir/algorithms.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab1_sort_comp.dir/algorithms.c.o   -c /Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c
 
 CMakeFiles/lab1_sort_comp.dir/algorithms.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab1_sort_comp.dir/algorithms.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c > CMakeFiles/lab1_sort_comp.dir/algorithms.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c > CMakeFiles/lab1_sort_comp.dir/algorithms.c.i
 
 CMakeFiles/lab1_sort_comp.dir/algorithms.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab1_sort_comp.dir/algorithms.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c -o CMakeFiles/lab1_sort_comp.dir/algorithms.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c -o CMakeFiles/lab1_sort_comp.dir/algorithms.c.s
 
 CMakeFiles/lab1_sort_comp.dir/algorithms.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/lab1_sort_comp.dir/algorithms.c.o.provides.build: CMakeFiles/lab1_sor
 
 CMakeFiles/lab1_sort_comp.dir/utils.c.o: CMakeFiles/lab1_sort_comp.dir/flags.make
 CMakeFiles/lab1_sort_comp.dir/utils.c.o: ../utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lab1_sort_comp.dir/utils.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab1_sort_comp.dir/utils.c.o   -c /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lab1_sort_comp.dir/utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lab1_sort_comp.dir/utils.c.o   -c /Users/sasha/ClionProjects/lab1-sort-comp/utils.c
 
 CMakeFiles/lab1_sort_comp.dir/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lab1_sort_comp.dir/utils.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c > CMakeFiles/lab1_sort_comp.dir/utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sasha/ClionProjects/lab1-sort-comp/utils.c > CMakeFiles/lab1_sort_comp.dir/utils.c.i
 
 CMakeFiles/lab1_sort_comp.dir/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lab1_sort_comp.dir/utils.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c -o CMakeFiles/lab1_sort_comp.dir/utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sasha/ClionProjects/lab1-sort-comp/utils.c -o CMakeFiles/lab1_sort_comp.dir/utils.c.s
 
 CMakeFiles/lab1_sort_comp.dir/utils.c.o.requires:
 
@@ -138,16 +138,16 @@ lab1_sort_comp_OBJECTS = \
 # External object files for target lab1_sort_comp
 lab1_sort_comp_EXTERNAL_OBJECTS =
 
-lab1_sort_comp.exe: CMakeFiles/lab1_sort_comp.dir/main.c.o
-lab1_sort_comp.exe: CMakeFiles/lab1_sort_comp.dir/algorithms.c.o
-lab1_sort_comp.exe: CMakeFiles/lab1_sort_comp.dir/utils.c.o
-lab1_sort_comp.exe: CMakeFiles/lab1_sort_comp.dir/build.make
-lab1_sort_comp.exe: CMakeFiles/lab1_sort_comp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable lab1_sort_comp.exe"
+lab1_sort_comp: CMakeFiles/lab1_sort_comp.dir/main.c.o
+lab1_sort_comp: CMakeFiles/lab1_sort_comp.dir/algorithms.c.o
+lab1_sort_comp: CMakeFiles/lab1_sort_comp.dir/utils.c.o
+lab1_sort_comp: CMakeFiles/lab1_sort_comp.dir/build.make
+lab1_sort_comp: CMakeFiles/lab1_sort_comp.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable lab1_sort_comp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab1_sort_comp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/lab1_sort_comp.dir/build: lab1_sort_comp.exe
+CMakeFiles/lab1_sort_comp.dir/build: lab1_sort_comp
 
 .PHONY : CMakeFiles/lab1_sort_comp.dir/build
 
@@ -162,6 +162,6 @@ CMakeFiles/lab1_sort_comp.dir/clean:
 .PHONY : CMakeFiles/lab1_sort_comp.dir/clean
 
 CMakeFiles/lab1_sort_comp.dir/depend:
-	cd /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/d/alexb/ClionProjects/lab1-sort-comp /cygdrive/d/alexb/ClionProjects/lab1-sort-comp /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sasha/ClionProjects/lab1-sort-comp /Users/sasha/ClionProjects/lab1-sort-comp /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/lab1_sort_comp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lab1_sort_comp.dir/depend
 

@@ -3,8 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lab1_sort_comp.dir/algorithms.c.o"
   "CMakeFiles/lab1_sort_comp.dir/utils.c.o"
   "lab1_sort_comp.pdb"
-  "lab1_sort_comp.exe"
-  "liblab1_sort_comp.dll.a"
+  "lab1_sort_comp"
 )
 
 # Per-language clean rules from dependency scanning.

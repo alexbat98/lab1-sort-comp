@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /cygdrive/c/Users/alexb/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/d/alexb/ClionProjects/lab1-sort-comp
+CMAKE_SOURCE_DIR = /Users/sasha/ClionProjects/lab1-sort-comp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test_bubble_sort.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/test_bubble_sort.dir/flags.make
 
 CMakeFiles/test_bubble_sort.dir/algorithms.c.o: CMakeFiles/test_bubble_sort.dir/flags.make
 CMakeFiles/test_bubble_sort.dir/algorithms.c.o: ../algorithms.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_bubble_sort.dir/algorithms.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_bubble_sort.dir/algorithms.c.o   -c /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/test_bubble_sort.dir/algorithms.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_bubble_sort.dir/algorithms.c.o   -c /Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c
 
 CMakeFiles/test_bubble_sort.dir/algorithms.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test_bubble_sort.dir/algorithms.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c > CMakeFiles/test_bubble_sort.dir/algorithms.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c > CMakeFiles/test_bubble_sort.dir/algorithms.c.i
 
 CMakeFiles/test_bubble_sort.dir/algorithms.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test_bubble_sort.dir/algorithms.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/algorithms.c -o CMakeFiles/test_bubble_sort.dir/algorithms.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c -o CMakeFiles/test_bubble_sort.dir/algorithms.c.s
 
 CMakeFiles/test_bubble_sort.dir/algorithms.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/test_bubble_sort.dir/algorithms.c.o.provides.build: CMakeFiles/test_b
 
 CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o: CMakeFiles/test_bubble_sort.dir/flags.make
 CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o: ../tests/test_bubble_sort.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o   -c /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/tests/test_bubble_sort.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o   -c /Users/sasha/ClionProjects/lab1-sort-comp/tests/test_bubble_sort.c
 
 CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/tests/test_bubble_sort.c > CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sasha/ClionProjects/lab1-sort-comp/tests/test_bubble_sort.c > CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.i
 
 CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/tests/test_bubble_sort.c -o CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sasha/ClionProjects/lab1-sort-comp/tests/test_bubble_sort.c -o CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.s
 
 CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o.provides.build: CMake
 
 CMakeFiles/test_bubble_sort.dir/utils.c.o: CMakeFiles/test_bubble_sort.dir/flags.make
 CMakeFiles/test_bubble_sort.dir/utils.c.o: ../utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/test_bubble_sort.dir/utils.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_bubble_sort.dir/utils.c.o   -c /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/test_bubble_sort.dir/utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_bubble_sort.dir/utils.c.o   -c /Users/sasha/ClionProjects/lab1-sort-comp/utils.c
 
 CMakeFiles/test_bubble_sort.dir/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test_bubble_sort.dir/utils.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c > CMakeFiles/test_bubble_sort.dir/utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/sasha/ClionProjects/lab1-sort-comp/utils.c > CMakeFiles/test_bubble_sort.dir/utils.c.i
 
 CMakeFiles/test_bubble_sort.dir/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test_bubble_sort.dir/utils.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/utils.c -o CMakeFiles/test_bubble_sort.dir/utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/sasha/ClionProjects/lab1-sort-comp/utils.c -o CMakeFiles/test_bubble_sort.dir/utils.c.s
 
 CMakeFiles/test_bubble_sort.dir/utils.c.o.requires:
 
@@ -138,16 +138,16 @@ test_bubble_sort_OBJECTS = \
 # External object files for target test_bubble_sort
 test_bubble_sort_EXTERNAL_OBJECTS =
 
-test_bubble_sort.exe: CMakeFiles/test_bubble_sort.dir/algorithms.c.o
-test_bubble_sort.exe: CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o
-test_bubble_sort.exe: CMakeFiles/test_bubble_sort.dir/utils.c.o
-test_bubble_sort.exe: CMakeFiles/test_bubble_sort.dir/build.make
-test_bubble_sort.exe: CMakeFiles/test_bubble_sort.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable test_bubble_sort.exe"
+test_bubble_sort: CMakeFiles/test_bubble_sort.dir/algorithms.c.o
+test_bubble_sort: CMakeFiles/test_bubble_sort.dir/tests/test_bubble_sort.c.o
+test_bubble_sort: CMakeFiles/test_bubble_sort.dir/utils.c.o
+test_bubble_sort: CMakeFiles/test_bubble_sort.dir/build.make
+test_bubble_sort: CMakeFiles/test_bubble_sort.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable test_bubble_sort"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_bubble_sort.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/test_bubble_sort.dir/build: test_bubble_sort.exe
+CMakeFiles/test_bubble_sort.dir/build: test_bubble_sort
 
 .PHONY : CMakeFiles/test_bubble_sort.dir/build
 
@@ -162,6 +162,6 @@ CMakeFiles/test_bubble_sort.dir/clean:
 .PHONY : CMakeFiles/test_bubble_sort.dir/clean
 
 CMakeFiles/test_bubble_sort.dir/depend:
-	cd /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /cygdrive/d/alexb/ClionProjects/lab1-sort-comp /cygdrive/d/alexb/ClionProjects/lab1-sort-comp /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug /cygdrive/d/alexb/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/test_bubble_sort.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sasha/ClionProjects/lab1-sort-comp /Users/sasha/ClionProjects/lab1-sort-comp /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug /Users/sasha/ClionProjects/lab1-sort-comp/cmake-build-debug/CMakeFiles/test_bubble_sort.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test_bubble_sort.dir/depend
 
