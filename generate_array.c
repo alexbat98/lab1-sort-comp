@@ -6,13 +6,13 @@
 #include <memory.h>
 #include <time.h>
 
-#define N 300000
+#define N 200000
 
 int main()
 {
 
     FILE *f;
-    if ((f = fopen("array3.dat", "wt")) == NULL)
+    if ((f = fopen("samples/200k_p.dat", "wt")) == NULL)
     {
         printf("Error");
         exit(1);
@@ -28,14 +28,14 @@ int main()
     for (i = 1; i <= N; i++)
     {
 
-//        do {
-            number = rand() % 100000;// % 100 + a;
-//        } while(cache[number]);
-//
-//        cache[number] = 1;
-//
-//        if (i % 100 == 0)
-//            a += 100;
+        do {
+            number = rand() % 100 + a;
+        } while(cache[number]);
+
+        cache[number] = 1;
+
+        if (i % 100 == 0)
+            a += 100;
 
         fprintf(f, "%d ", number);
     }

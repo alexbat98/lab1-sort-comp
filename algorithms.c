@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+#include <string.h>
 #include "algorithms.h"
 
 /**
@@ -203,31 +204,62 @@ void insertion_sort(int *arr, int n)
 }
 
 /**
- * Сортировка слиянием
- * @param arr Исходный массив
- * @param scratch Внешняя память
- * @param start Начальный индекс
- * @param end Конечный индекс
+ * Алгоритм слияния двух упорядоченных массивов
+ * @param scratch Массив, содержащий два упорядоченных подмассива
+ * @param scratch_size Размер массива scratch
+ * @param part_size Размер первого подмассива
+ * @param arr Массив, в который необходимо поместить результат
+ * @param start Начальный индекс в массиве arr
  */
-void merge_sort(int *arr, int *scratch, int start, int end)
+//void merge(int * scratch, int scratch_size, int part_size, int *arr, int start)
+//{
+//
+//    int right_idx = part_size;
+//    int left_idx = 0;
+//    int mid_idx = part_size;
+//    int count = 0;
+//
+//    // Слияние
+//    while ((left_idx < mid_idx) && (right_idx < scratch_size))
+//    {
+//        if (scratch[left_idx] <= scratch[right_idx])
+//        {
+//            arr[start + count] = scratch[left_idx++];
+//            count++;
+//        } else
+//        {
+//            arr[start + count] = scratch[right_idx++];
+//            count++;
+//        }
+//    }
+//
+//    // Дописываем оставшиеся элементы
+//    for (; left_idx < mid_idx; ++left_idx)
+//    {
+//        arr[start + count] = scratch[left_idx];
+//        count++;
+//    }
+//
+//    for (; right_idx < scratch_size; ++right_idx)
+//    {
+//        arr[start + count] = scratch[right_idx];
+//        count++;
+//    }
+//}
+
+void merge(int *arr, int n, int *scratch, int size, int start)
 {
-    if (end == start)
-    {
-        return;
-    }
-
-    // Середина массива
-    int mid_point = (start + end) / 2;
-
-    // Сортируем две половины
-    merge_sort(arr, scratch, start, mid_point);
-    merge_sort(arr, scratch, mid_point + 1, end);
-
-    // Слияние
+    int i;
     int left_idx = start;
-    int right_idx = mid_point + 1;
+    int right_idx = start + size;
+    int mid_point = right_idx;
+    int end = start + size * 2;
+    if (n - end < size)
+    {
+        end = n;
+    }
     int scratch_idx = left_idx;
-    while ((left_idx <= mid_point) && (right_idx <= end))
+    while ((left_idx < mid_point) && (right_idx < end))
     {
         if (arr[left_idx] <= arr[right_idx])
         {
@@ -238,23 +270,46 @@ void merge_sort(int *arr, int *scratch, int start, int end)
         }
     }
 
-    int i;
-
-    for (i = left_idx; i <= mid_point; i++)
+    for (i = left_idx; i < mid_point; i++)
     {
         scratch[scratch_idx++] = arr[i];
     }
 
-    for (i = right_idx; i <= end; ++i)
+    for (i = right_idx; i < end; ++i)
     {
         scratch[scratch_idx++] = arr[i];
     }
 
-    for (i = start; i <= end; i++)
+    for (i = start; i < end; i++)
     {
         arr[i] = scratch[i];
     }
+}
 
+/**
+ * Сортировка слиянием
+ * @param arr Исходный массив
+ * @param n Количество элементов
+ */
+void merge_sort(int *arr, int n)
+{
+
+    int start = 0;
+    int size = 0;
+
+    int *scratch = (int *) calloc((size_t) n, sizeof(int));
+
+    for (size = 1; size < n; size *= 2)
+    {
+        for (start = 0; start + size < n; start += size * 2)
+        {
+            // Слияние
+            merge(arr, n, scratch, size, start);
+
+        }
+    }
+
+    free(scratch);
 }
 
 /**
@@ -339,4 +394,59 @@ void quick_sort(int *arr, int start, int end, int counter)
     quick_sort(arr, start, lo - 1, ++counter);
     quick_sort(arr, mid, end, counter);
 
+}
+
+void improved_selection_sort(int *arr, int n)
+{
+    const int split = 2;
+    int * mins = (int *) calloc((size_t) n*2, sizeof(int));
+    int mins_count = 0;
+    int i, j, min_idx, delta, t, incr;
+
+    for (i = 0; i < n / split; ++i)
+    {
+        mins[mins_count++] = min(arr + i * split, split);
+    }
+
+    if (n - (n / split) * split > 0)
+    {
+        for (i = (n / split) * split; i < n; ++i)
+        {
+            mins[mins_count++] = i;
+        }
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        min_idx = 0;
+        for (j = 1; j < mins_count; j++)
+        {
+            if (arr[mins[j]] > arr[mins[min_idx]])
+            {
+                min_idx = j;
+            }
+        }
+
+        // переформатируем массив минимальных
+        delta = (mins[min_idx] / split) * split;
+        t = mins[min_idx];
+        incr = split;
+        if (t == delta)
+        {
+            delta++;
+            incr--;
+        }
+
+        mins[min_idx] = delta;
+        for (j = delta; j < delta + incr; j++)
+        {
+            mins[mins_count++] = j;
+        }
+
+        arr[t] ^= arr[i];
+        arr[i] ^= arr[t];
+        arr[t] ^= arr[i];
+    }
+
+    free(mins);
 }
