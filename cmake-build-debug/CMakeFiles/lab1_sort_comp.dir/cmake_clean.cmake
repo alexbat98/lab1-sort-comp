@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/lab1_sort_comp.dir/main.c.o"
-  "CMakeFiles/lab1_sort_comp.dir/algorithms.c.o"
-  "CMakeFiles/lab1_sort_comp.dir/utils.c.o"
+  "CMakeFiles/lab1_sort_comp.dir/src/main.c.o"
+  "CMakeFiles/lab1_sort_comp.dir/src/algorithms.c.o"
+  "CMakeFiles/lab1_sort_comp.dir/src/utils.c.o"
   "lab1_sort_comp.pdb"
   "lab1_sort_comp"
 )

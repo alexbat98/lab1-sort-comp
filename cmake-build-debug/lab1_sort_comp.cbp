@@ -500,7 +500,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/algorithms.c">
+		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/generate_array.c">
+			<Option target="generate_array"/>
+		</Unit>
+		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/src/algorithms.c">
 			<Option target="test_quick_sort"/>
 			<Option target="test_merge"/>
 			<Option target="test_merge_sort"/>
@@ -512,13 +515,34 @@
 			<Option target="test_improved_selection_sort"/>
 			<Option target="lab1_sort_comp"/>
 		</Unit>
-		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/algorithms.h">
+		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/src/algorithms.h">
 			<Option target="lab1_sort_comp"/>
 		</Unit>
-		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/generate_array.c">
-			<Option target="generate_array"/>
+		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/src/main.c">
+			<Option target="lab1_sort_comp"/>
 		</Unit>
-		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/main.c">
+		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/src/utils.c">
+			<Option target="test_quick_sort"/>
+			<Option target="test_merge"/>
+			<Option target="test_merge_sort"/>
+			<Option target="test_shell_sort"/>
+			<Option target="test_selection_sort"/>
+			<Option target="test_insertion_sort"/>
+			<Option target="test_better_bubble_sort"/>
+			<Option target="test_bubble_sort"/>
+			<Option target="test_improved_selection_sort"/>
+			<Option target="lab1_sort_comp"/>
+		</Unit>
+		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/src/utils.h">
+			<Option target="test_quick_sort"/>
+			<Option target="test_merge"/>
+			<Option target="test_merge_sort"/>
+			<Option target="test_shell_sort"/>
+			<Option target="test_selection_sort"/>
+			<Option target="test_insertion_sort"/>
+			<Option target="test_better_bubble_sort"/>
+			<Option target="test_bubble_sort"/>
+			<Option target="test_improved_selection_sort"/>
 			<Option target="lab1_sort_comp"/>
 		</Unit>
 		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/tests/test_better_bubble_sort.c">
@@ -547,30 +571,6 @@
 		</Unit>
 		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/tests/test_shell_sort.c">
 			<Option target="test_shell_sort"/>
-		</Unit>
-		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/utils.c">
-			<Option target="test_quick_sort"/>
-			<Option target="test_merge"/>
-			<Option target="test_merge_sort"/>
-			<Option target="test_shell_sort"/>
-			<Option target="test_selection_sort"/>
-			<Option target="test_insertion_sort"/>
-			<Option target="test_better_bubble_sort"/>
-			<Option target="test_bubble_sort"/>
-			<Option target="test_improved_selection_sort"/>
-			<Option target="lab1_sort_comp"/>
-		</Unit>
-		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/utils.h">
-			<Option target="test_quick_sort"/>
-			<Option target="test_merge"/>
-			<Option target="test_merge_sort"/>
-			<Option target="test_shell_sort"/>
-			<Option target="test_selection_sort"/>
-			<Option target="test_insertion_sort"/>
-			<Option target="test_better_bubble_sort"/>
-			<Option target="test_bubble_sort"/>
-			<Option target="test_improved_selection_sort"/>
-			<Option target="lab1_sort_comp"/>
 		</Unit>
 		<Unit filename="/Users/sasha/ClionProjects/lab1-sort-comp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

@@ -3,8 +3,8 @@
 //
 
 
-#include "../algorithms.h"
-#include "../utils.h"
+#include "../src/algorithms.h"
+#include "../src/utils.h"
 #include <stdio.h>
 
 extern int CONSTANT_ARRAY[17];

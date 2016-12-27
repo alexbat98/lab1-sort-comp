@@ -2,8 +2,8 @@
 // Created by Александр Баташев on 02.12.16.
 //
 
-#include "../algorithms.h"
-#include "../utils.h"
+#include "../src/algorithms.h"
+#include "../src/utils.h"
 #include <stdio.h>
 
 extern int CONSTANT_ARRAY[17];

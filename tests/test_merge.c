@@ -2,7 +2,7 @@
 // Created by Александр Баташев on 16.12.16.
 //
 #include <stdio.h>
-#include "../algorithms.h"
+#include "../src/algorithms.h"
 #include <stdlib.h>
 
 int main()

@@ -1,0 +1,234 @@
+\appendix 
+\section*{Приложение} 
+\phantomsection
+\addcontentsline{toc}{section}{{\bf Приложение}} 
+\markboth{{\bf Приложение}}{{\bf Приложение}}
+
+\begin{lstlisting}
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include <string.h>
+#include "algorithms.h"
+/**
+ * Классическая пузырьковая сортировка
+ * @param arr Массив значений для сортировки
+ * @param n Длина массива
+ */
+void bubble_sort(int *arr, int n)
+{
+    int i, l, hasChanged;
+    l = n - 1;
+    do
+    {
+        hasChanged = 0;
+        for (i = 0; i < l; ++i)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                arr[i] ^= arr[i + 1];
+                arr[i + 1] ^= arr[i];
+                arr[i] ^= arr[i + 1];
+                hasChanged = 1;
+            }
+        }
+        l--;
+    } while (hasChanged);
+}
+/**
+ * Улучшенная сортировка пузырьком с проходом в обе стороны
+ * @param arr Массив данных
+ * @param n Количество элементов
+ */
+void better_bubble_sort(int *arr, int n)
+{
+    int i, start, finish, hasChanged;
+    start = 0;
+    finish = n - 1;
+    do
+    {
+        hasChanged = 0;
+        for (i = start; i < finish; ++i)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                arr[i] ^= arr[i + 1];
+                arr[i + 1] ^= arr[i];
+                arr[i] ^= arr[i + 1];
+                hasChanged = 1;
+            }
+        }
+        --finish;
+        if (hasChanged)
+        {
+            for (i = finish - 1; i >= start; --i)
+            {
+                if (arr[i] > arr[i + 1])
+                {
+                    arr[i] ^= arr[i + 1];
+                    arr[i + 1] ^= arr[i];
+                    arr[i] ^= arr[i + 1];
+                    hasChanged = 1;
+                }
+            }
+            start++;
+        }
+    }
+    while (hasChanged);
+}
+/**
+ * Сортировка Шелла
+ * @param arr Массив данных
+ * @param n Количество элементов
+ */
+void shell_sort(int *arr, int n)
+{
+    int i, hasChanged;
+    int d = n;
+    do
+    {
+        d = (d + 1) / 2;
+        hasChanged = 0;
+        for (i = 0; i < n - d; ++i)
+        {
+            if (arr[i] > arr[i + d])
+            {
+                arr[i] ^= arr[i+d];
+                arr[i + d] ^= arr[i];
+                arr[i] ^= arr[i + d];
+                hasChanged = 1;
+            }
+        }
+    }
+    while (d != 1 || hasChanged);
+}
+/**
+ * Поиск минимального элемента в массиве
+ * @param arr Массив
+ * @param n Количество элементов
+ * @return Индекс минимального
+ */
+int min(int *arr, int n)
+{
+    int i, min_idx = 0;
+
+    for (i = 0; i < n; ++i)
+    {
+        if (arr[i] < arr[min_idx])
+        {
+            min_idx = i;
+        }
+    }
+    return min_idx;
+}
+/**
+ * Сортировка выбором
+ * @param arr Массив данных
+ * @param n Количество элементов
+ */
+void selection_sort(int *arr, int n)
+{
+    int i, j, pos;
+    for (i = 0; i < n - 1; ++i)
+    {
+        pos = i;
+        for (j = i + 1; j < n; ++j)
+        {
+            if (arr[pos] > arr[j])
+            {
+                pos = j;
+            }
+        }
+        if (pos != i)
+        {
+            arr[i] ^= arr[pos];
+            arr[pos] ^= arr[i];
+            arr[i] ^= arr[pos];
+        }
+    }
+}
+/**
+ * Сортировка вставками
+ * @param arr Массив
+ * @param n Количество элементов
+ */
+void insertion_sort(int *arr, int n)
+{
+    int i, j, b;
+    for (i = 0; i < n - 1; ++i)
+    {
+        b = arr[i + 1];
+        j = i;
+        while ((j >= 0) && (b < arr[j]))
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = b;
+    }
+}
+/**
+ * Алгоритм слияния двух упорядоченных массивов
+ * @param first Первая часть
+ * @param nf Размер
+ * @param second Вторая часть
+ * @param ns Размер
+ * @param result Результат
+ * @param k Количество
+ */
+void merge ( int * first, int nf, int * second, int ns, int * result, int k )
+{
+    int count = 0, i = 0, j = 0;
+    first[nf] = INT_MAX;
+    second[ns] = INT_MAX;
+    while (count < nf + ns)
+    {
+        if (first[i] < second[j])
+        {
+            result[k + count] = first[i++];
+            count++;
+        } else
+        {
+            result[k + count] = second[j++];
+            count++;
+        }
+    }
+}
+/**
+ * Сортировка слиянием
+ * @param arr Исходный массив
+ * @param n Количество элементов
+ */
+void merge_sort ( int * arr, int n )
+{
+    int i;
+    int h = 1;
+    int begin;
+    int nf, ns;
+    int *first, *second;
+    first = (int *) calloc (n, sizeof(int));
+    second = (int *) calloc (n / 2 + 1, sizeof(int));
+    while (h < n)
+    {
+        begin = 0;
+        while (begin < n - 1)
+        {
+            nf = 0;
+            for (i = 0; (i < h) && (begin + i < n); i++)
+            {
+                first[i] = arr[begin + i];
+                nf++;
+            }
+            ns = 0;
+            for (i = 0; (i < h) && (begin + h + i < n); i++)
+            {
+                second[i] = arr[begin + h + i];
+                ns++;
+            }
+            merge(first, nf, second, ns, arr, begin);
+            begin += 2 * h;
+        }
+        h *= 2;
+    }
+}
+\end{lstlisting}

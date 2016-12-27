@@ -6,6 +6,7 @@
 #include <time.h>
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 #include "algorithms.h"
 
 /**
@@ -203,86 +204,33 @@ void insertion_sort(int *arr, int n)
     }
 }
 
+
 /**
  * Алгоритм слияния двух упорядоченных массивов
- * @param scratch Массив, содержащий два упорядоченных подмассива
- * @param scratch_size Размер массива scratch
- * @param part_size Размер первого подмассива
- * @param arr Массив, в который необходимо поместить результат
- * @param start Начальный индекс в массиве arr
+ * @param first Первая часть
+ * @param nf Размер
+ * @param second Вторая часть
+ * @param ns Размер
+ * @param result Результат
+ * @param k Количество
  */
-//void merge(int * scratch, int scratch_size, int part_size, int *arr, int start)
-//{
-//
-//    int right_idx = part_size;
-//    int left_idx = 0;
-//    int mid_idx = part_size;
-//    int count = 0;
-//
-//    // Слияние
-//    while ((left_idx < mid_idx) && (right_idx < scratch_size))
-//    {
-//        if (scratch[left_idx] <= scratch[right_idx])
-//        {
-//            arr[start + count] = scratch[left_idx++];
-//            count++;
-//        } else
-//        {
-//            arr[start + count] = scratch[right_idx++];
-//            count++;
-//        }
-//    }
-//
-//    // Дописываем оставшиеся элементы
-//    for (; left_idx < mid_idx; ++left_idx)
-//    {
-//        arr[start + count] = scratch[left_idx];
-//        count++;
-//    }
-//
-//    for (; right_idx < scratch_size; ++right_idx)
-//    {
-//        arr[start + count] = scratch[right_idx];
-//        count++;
-//    }
-//}
-
-void merge(int *arr, int n, int *scratch, int size, int start)
+void merge ( int * first, int nf, int * second, int ns, int * result, int k )
 {
-    int i;
-    int left_idx = start;
-    int right_idx = start + size;
-    int mid_point = right_idx;
-    int end = start + size * 2;
-    if (n - end < size)
+    int count = 0, i = 0, j = 0;
+    first[nf] = INT_MAX;
+    second[ns] = INT_MAX;
+
+    while (count < nf + ns)
     {
-        end = n;
-    }
-    int scratch_idx = left_idx;
-    while ((left_idx < mid_point) && (right_idx < end))
-    {
-        if (arr[left_idx] <= arr[right_idx])
+        if (first[i] < second[j])
         {
-            scratch[scratch_idx++] = arr[left_idx++];
+            result[k + count] = first[i++];
+            count++;
         } else
         {
-            scratch[scratch_idx++] = arr[right_idx++];
+            result[k + count] = second[j++];
+            count++;
         }
-    }
-
-    for (i = left_idx; i < mid_point; i++)
-    {
-        scratch[scratch_idx++] = arr[i];
-    }
-
-    for (i = right_idx; i < end; ++i)
-    {
-        scratch[scratch_idx++] = arr[i];
-    }
-
-    for (i = start; i < end; i++)
-    {
-        arr[i] = scratch[i];
     }
 }
 
@@ -291,26 +239,43 @@ void merge(int *arr, int n, int *scratch, int size, int start)
  * @param arr Исходный массив
  * @param n Количество элементов
  */
-void merge_sort(int *arr, int n)
+void merge_sort ( int * arr, int n )
 {
+    int i;
+    int h = 1;
+    int begin;
+    int nf, ns;
 
-    int start = 0;
-    int size = 0;
+    int *first, *second;
 
-    int *scratch = (int *) calloc((size_t) n, sizeof(int));
+    first = (int *) calloc (n, sizeof(int));
+    second = (int *) calloc (n / 2 + 1, sizeof(int));
 
-    for (size = 1; size < n; size *= 2)
+    while (h < n)
     {
-        for (start = 0; start + size < n; start += size * 2)
+        begin = 0;
+        while (begin < n - 1)
         {
-            // Слияние
-            merge(arr, n, scratch, size, start);
+            nf = 0;
+            for (i = 0; (i < h) && (begin + i < n); i++)
+            {
+                first[i] = arr[begin + i];
+                nf++;
+            }
+            ns = 0;
+            for (i = 0; (i < h) && (begin + h + i < n); i++)
+            {
+                second[i] = arr[begin + h + i];
+                ns++;
+            }
 
+            merge(first, nf, second, ns, arr, begin);
+            begin += 2 * h;
         }
+        h *= 2;
     }
-
-    free(scratch);
 }
+
 
 /**
  * Быстрая сортировка

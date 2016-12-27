@@ -6,13 +6,13 @@
 #include <memory.h>
 #include <time.h>
 
-#define N 200000
+#define N 50000
 
 int main()
 {
 
     FILE *f;
-    if ((f = fopen("samples/200k_p.dat", "wt")) == NULL)
+    if ((f = fopen("samples/50k_r.dat", "wt")) == NULL)
     {
         printf("Error");
         exit(1);

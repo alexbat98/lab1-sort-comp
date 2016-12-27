@@ -1,0 +1,140 @@
+\documentclass[12pt,a4paper]{article}
+% \usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[TS1,T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage{setspace, amsmath}
+\usepackage{indentfirst}
+\usepackage{misccorr}
+\usepackage{tocloft}
+\usepackage{graphicx}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{cmap}
+%%% Общее форматирование
+\usepackage{soulutf8}                               % Поддержка переносоустойчивых подчёркиваний и зачёркиваний
+\usepackage{icomma}                                 % Запятая в десятичных дробях
+% \usepackage{url}
+\usepackage{listings} % source code
+\usepackage{hyperref}
+\usepackage{csquotes} % ещё одна штука для цитат
+\usepackage[%
+block=ragged,
+backend=biber,% движок
+bibencoding=utf8,% кодировка bib файла
+sorting=none,% настройка сортировки списка литературы
+style=gost-numeric,% стиль цитирования и библиографии (по ГОСТ)
+language=autobib,% получение языка из babel/polyglossia, default: autobib % если ставить autocite или auto, то цитаты в тексте с указанием страницы, получат указание страницы на языке оригинала
+autolang=other,% многоязычная библиография
+clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
+defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
+sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
+doi=false,% Показывать или нет ссылки на DOI
+isbn=false,% Показывать или нет ISBN
+]{biblatex}
+
+\usepackage{inconsolata}
+\usepackage{xcolor}
+\lstset{
+    language=C, %% Troque para PHP, C, Java, etc... bash é o padrão
+    basicstyle=\ttfamily\small,
+    numberstyle=\footnotesize,
+    numbers=left,
+    % backgroundcolor=\color{gray!10},
+    % frame=single,
+    % tabsize=2,
+    rulecolor=\color{black},
+    keywordstyle=\color{blue}\ttfamily,
+    commentstyle=\itshape\color{gray}\ttfamily,
+    title=\lstname,
+    % escapeinside={\%*}{*)},
+    breaklines=true,
+    % commentstyle=\itshape\color{gray},
+    % breakatwhitespace=true,
+    % framextopmargin=2pt,
+    % framexbottommargin=2pt,
+    inputencoding=utf8,
+    extendedchars=\true,
+    keepspaces = true
+}
+
+% \usepackage{natbib}
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage[left=25mm, top=20mm, right=15mm, bottom=20mm, nohead, footskip=10mm]{geometry}
+\frenchspacing
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\bibliography{biblio}
+
+\begin{document}
+{\setstretch{1.0}
+\begin{titlepage}
+  \begin{center}
+    МИНИСТЕРСТВО ОБРАЗОВАНИЯ И НАУКИ РОССИЙСКОЙ ФЕДЕРАЦИИ\break
+    Федеральное государственное автономное образовательное учреждение высшего образования\break
+    \textbf{«Национальный исследовательский Нижегородский государственный университет им.~Н.И.~Лобачевского» (ННГУ)}
+    \break
+
+    \vspace*{1.25cm}
+
+    \textbf{Институт информационных технологий, математики и механики}
+
+    \vspace{0.5cm}
+
+    Направление подготовки: «Фундаментальная информатика и информационные технологии»\break
+
+    \vspace{2.5cm}
+
+    \large{\textbf{ОТЧЕТ}}\break
+    по учебной практике\break
+
+    \vspace{0.25cm}
+
+    на тему:\break
+    \large{\textbf{«Сравнение алгоритмов сортировки»}}
+  \end{center}
+
+\vspace{2cm}
+
+\hfill\textbf{Выполнил:} студент группы 381606-1
+
+ \hfill ФИО
+
+ \hfill\textbf{Научный руководитель:}
+
+ \hfill ФИО
+\vfill
+\begin{center}
+  Нижний Новгород\break
+  2016
+\end{center}
+\end{titlepage}
+}
+
+% \thispagestyle{empty}
+\newpage
+\tableofcontents
+% \clearpage
+\newpage
+\input{introduction.tex}
+\newpage
+\input{problem.tex}
+\newpage
+\input{structure.tex}
+\newpage
+\input{instructions.tex}
+\newpage
+\input{experiment.tex}
+\newpage
+\input{results.tex}
+
+
+
+\newpage
+% \bibliographystyle{utf8gost705u}
+% \bibliography{biblio}
+\printbibliography[heading=bibintoc]
+
+\newpage
+\input{appendix.tex}
+
+\end{document}

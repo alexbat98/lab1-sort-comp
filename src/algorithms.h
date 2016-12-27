@@ -13,7 +13,7 @@ void insertion_sort(int *arr, int n);
 //void merge_sort(int *arr, int *scratch, int start, int end);
 void quick_sort(int *arr, int start, int end, int counter);
 void improved_selection_sort(int *arr, int n);
-void merge(int *arr, int n, int *scratch, int size, int start);
+void merge ( int * first, int nf, int * second, int ns, int * result, int k );
 void merge_sort(int *arr, int n);
 
 #endif //LAB1_SOT_COMP_ALGORITHMS_H

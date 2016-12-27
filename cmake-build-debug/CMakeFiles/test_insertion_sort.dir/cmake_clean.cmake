@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_insertion_sort.dir/algorithms.c.o"
+  "CMakeFiles/test_insertion_sort.dir/src/algorithms.c.o"
   "CMakeFiles/test_insertion_sort.dir/tests/test_insertion_sort.c.o"
-  "CMakeFiles/test_insertion_sort.dir/utils.c.o"
+  "CMakeFiles/test_insertion_sort.dir/src/utils.c.o"
   "test_insertion_sort.pdb"
   "test_insertion_sort"
 )

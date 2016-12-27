@@ -3,23 +3,28 @@
 //
 
 
-#include "../algorithms.h"
-#include "../utils.h"
+#include "../src/algorithms.h"
+#include "../src/utils.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 extern int CONSTANT_ARRAY[17];
 //#define N N_CONST
-#define N 18
+#define N 20
 int main()
 {
 
 
 //    int *arr = CONSTANT_ARRAY; // для удобсва
 
-    int arr[] = {4, 2, 5, 8, 0, 17, 32, 6, 1, 3, 9, 12, 18, 23, 15, 93, 21, 45};
-
+//    int arr[] = {4, 2, 5, 8, 0, 17, 32, 6, 1, 3, 9, 12, 18, 23, 15, 93, 21, 45, -1, 8};
+    int arr[N];
     int i;
+
+    for (i = 0; i < N; ++i)
+    {
+        arr[i] = rand() % 10000;
+    }
 
     for (i = 0; i < N; ++i)
     {
